@@ -1,0 +1,6 @@
+
+target 'FFCTemplate', :exclusive => true do
+  pod "FFCTemplate", :path => "../"
+
+  pod 'Kiwi/XCTest'
+end
