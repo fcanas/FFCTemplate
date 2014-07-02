@@ -59,7 +59,7 @@
             [scanner scanUpToString:[self endDelimiter] intoString:&key];
             key = [key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             
-            id value = [self.valueSource valueForKey:key];
+            id value = [self.valueSource valueForKeyPath:key];
             if ([value isKindOfClass:[NSString class]]) {
                 [destination appendString:value];
             } else if ([value respondsToSelector:@selector(stringValue)]) {

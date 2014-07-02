@@ -52,6 +52,14 @@ describe(@"FFCTemplate", ^{
           NSString *notNewResult = [template renderedTemplate];
           [[notNewResult should] equal:@"My favorite color is red and my favorite number is 47 and my least favorite number is -12!"];
       });
+      
+      it(@"should render key paths", ^{
+          NSString *keyPathTemplate = @"The color {{ color }} is {{ color.length }} letters long.";
+          FFCTemplate *template = [[FFCTemplate alloc] initWithTemplate:keyPathTemplate];
+          template.valueSource = testObject;
+          NSString *result = [template render];
+          [[result should] equal:@"The color red is 3 letters long."];
+      });
   });
 });
 
