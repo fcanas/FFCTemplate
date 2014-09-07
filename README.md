@@ -7,8 +7,6 @@
 
 A simple template renderer in Objective-C. Fill templates with object properties, methods, and [key paths](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/KeyValueCoding/Articles/BasicPrinciples.html).
 
-FFCTemplate is a work in progress.
-
 ## Usage
 
 Given
