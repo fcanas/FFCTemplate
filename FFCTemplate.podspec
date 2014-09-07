@@ -1,33 +1,47 @@
-#
-# Be sure to run `pod lib lint NAME.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "FFCTemplate"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "A model-based template in Objective-C."
   s.description      = <<-DESC
-                       Fill templates with object properties.
+                       A simple template renderer in Objective-C. Fill templates with object properties, methods, and key paths.
+
+                       Given
+                       ```
+                       @interface MYObject : NSObject
+                       @property (nonatomic, copy) NSString *color;
+                       @property (nonatomic, copy) NSNumber *favoriteNumber;
+                       @property (nonatomic, assign) NSInteger leastFavoriteNumber;
+                       @end
+                       
+                       ...
+                       
+                       obj = [[MYObject alloc] init];
+                       obj.color = @"red";
+                       obj.favoriteNumber = @47;
+                       obj.leastFavoriteNumber = -12;
+                       ```
+                       
+                       and
+                       
+                       ```
+                       NSString *templateString = @"My favorite color is {{ color }} and my favorite number is {{ favoriteNumber }} and my least favorite number is {{ leastFavoriteNumber }}!";
+                       ```
+
+                       ```
+                       template = [[FFCTemplate alloc] initWithTemplate:templateString];
+                       template.valueSource = obj;
+                       
+                       NSString *result = [template render]; 
+                       //@"My favorite color is red and my favorite number is 47 and my least favorite number is -12!"
+                       ```
                        DESC
   s.homepage         = "https://github.com/fcanas/FFCTemplate"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Fabian Canas" => "fcanas@gmail.com" }
-  s.source           = { :git => "https://github.com/fcanas/FFCTemplate.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/fcanas'
-
-  s.platform     = :ios, '7.0'
+  s.source           = { :git => "https://github.com/fcanas/FFCTemplate.git", :tag => 'v1.0.0' }
+  s.social_media_url = 'https://twitter.com/fcanas'
+  s.platform     = :ios, '5.0'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes'
-  s.resources = 'Pod/Assets/*.png'
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/**/*.h'
 end

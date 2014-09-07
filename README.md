@@ -40,17 +40,14 @@ NSString *result = [template render];
 //@"My favorite color is red and my favorite number is 47 and my least favorite number is -12!"
 ```
 
-<!-- To run the example project, clone the repo, and run `pod install` from the Example directory first.-->
-
-## Requirements
-none
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
-FFCTemplate ~~is~~ will soon be available through [CocoaPods](http://cocoapods.org). To install
+FFCTemplate is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "FFCTemplate", git: 'git@github.com:fcanas/FFCTemplate.git'
+    pod "FFCTemplate"
 
 ## Author
 
