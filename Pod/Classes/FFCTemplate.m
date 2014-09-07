@@ -15,7 +15,7 @@
 
 @implementation FFCTemplate
 
-- (instancetype)initWithTemplate:(NSString *)templateString
+- (instancetype)initWithTemplateString:(NSString *)templateString
 {
     self = [super init];
     if (self == nil){

@@ -37,7 +37,7 @@ describe(@"FFCTemplate", ^{
         
         beforeEach(^{
             NSString *templateString = @"My favorite color is {{ color }} and my favorite number is {{ favoriteNumber }} and my least favorite number is {{ leastFavoriteNumber }}!";
-            template = [[FFCTemplate alloc] initWithTemplate:templateString];
+            template = [[FFCTemplate alloc] initWithTemplateString:templateString];
             template.valueSource = testObject;
         });
         
@@ -59,7 +59,7 @@ describe(@"FFCTemplate", ^{
         
         it(@"should render key paths", ^{
             NSString *keyPathTemplate = @"The color {{ color }} is {{ color.length }} letters long.";
-            FFCTemplate *template = [[FFCTemplate alloc] initWithTemplate:keyPathTemplate];
+            FFCTemplate *template = [[FFCTemplate alloc] initWithTemplateString:keyPathTemplate];
             template.valueSource = testObject;
             NSString *result = [template render];
             [[result should] equal:@"The color red is 3 letters long."];
@@ -77,7 +77,7 @@ describe(@"FFCTemplate", ^{
         
         beforeEach(^{
             NSString *templateString = @"It's not secret that {{ color }} is my favorite color. But you should never hear about {{ secret }}.";
-            template = [[FFCTemplate alloc] initWithTemplate:templateString];
+            template = [[FFCTemplate alloc] initWithTemplateString:templateString];
             template.valueSource = testObject;
         });
         
