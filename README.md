@@ -10,7 +10,7 @@ A simple template renderer in Objective-C. Fill templates with object properties
 ## Usage
 
 Given
-```
+```objc
 @interface MYObject : NSObject
 @property (nonatomic, copy) NSString *color;
 @property (nonatomic, copy) NSNumber *favoriteNumber;
@@ -27,10 +27,10 @@ obj.leastFavoriteNumber = -12;
 
 and
 
-```
+```objc
 NSString *templateString = @"My favorite color is {{ color }} and my favorite number is {{ favoriteNumber }} and my least favorite number is {{ leastFavoriteNumber }}!";
 ```
-```
+```objc
 template = [[FFCTemplate alloc] initWithTemplate:templateString];
 template.valueSource = obj;
 
@@ -45,12 +45,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 FFCTemplate is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "FFCTemplate"
+```ruby
+pod "FFCTemplate"
+```
 
 ## Author
 
 Fabian Canas
-* fcanas@gmail.com
 * http://twitter.com/fcanas
 * https://github.com/fcanas
 
